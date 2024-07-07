@@ -9,6 +9,6 @@ const {
   createPiece,
 } = require("../controllers/Piece");
 const auth = require("../middleware/authentication");
-pieceRouter.route("/").get(getAllPieces).post(createPiece);
+pieceRouter.route("/").get(getAllPieces).post(auth,createPiece);
 pieceRouter.route("/:pieceId").get(getPiece).delete(auth,deletePiece).put(auth,updatePiece);
 module.exports=pieceRouter

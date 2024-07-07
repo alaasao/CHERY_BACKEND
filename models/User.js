@@ -20,7 +20,7 @@ const UserSchema = mongoose.Schema(
       minlength: 6,
     },
   },
-  { timestamps: true }
+  { timestamps: true }  
 );
 const bcrypt=require("bcryptjs")
 UserSchema.pre("save", async function () {

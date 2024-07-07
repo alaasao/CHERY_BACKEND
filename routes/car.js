@@ -9,6 +9,6 @@ const {
   createCar,
 } = require("../controllers/Car");
 const auth = require("../middleware/authentication");
-carRouter.route("/").get(getAllCars).post(createCar);
+carRouter.route("/").get(getAllCars).post(auth,createCar);
 carRouter.route("/:carId").get(getCar).delete(auth,deleteCar).put(auth,updateCar);
 module.exports=carRouter

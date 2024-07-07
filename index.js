@@ -21,6 +21,8 @@ const eventRouter = require("./routes/event")
 const faqRouter = require("./routes/faq")
 const pieceRouter = require("./routes/piece")
 const ticketRouter = require("./routes/ticket")
+const bonRouter = require("./routes/bon")
+const rdvRouter = require("./routes/Rdv")
 
 app.use("/auth", authRouter)
 app.use("/cars", carRouter)
@@ -29,7 +31,8 @@ app.use("/events", eventRouter)
 app.use("/faqs", faqRouter)
 app.use("/pieces", pieceRouter)
 app.use("/tickets", ticketRouter)
-
+app.use("/bon",bonRouter)
+app.use("/rdv",rdvRouter)
 
 app.use(notFound)
 app.use(errorHandlerMiddleware)

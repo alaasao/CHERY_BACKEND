@@ -9,6 +9,6 @@ const {
   createFaq,
 } = require("../controllers/Faq");
 const auth = require("../middleware/authentication");
-faqRouter.route("/").get(getAllFaqs).post(createFaq);
+faqRouter.route("/").get(getAllFaqs).post(auth,createFaq);
 faqRouter.route("/:faqId").get(getFaq).delete(auth,deleteFaq).put(auth,updateFaq);
 module.exports=faqRouter
